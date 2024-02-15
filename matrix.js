@@ -156,7 +156,6 @@ function addMatrices(matrix1, matrix2){
                 }
             added_matrix.push(rowData);
     }
-    console.log(added_matrix);
     return added_matrix;
 }
     }
@@ -181,7 +180,6 @@ const subtractMatrices = function (matrix1, matrix2) {
                 }
             sub_matrix.push(rowData);
     }
-    console.log(sub_matrix);
     return sub_matrix;
 }
 };
@@ -204,7 +202,6 @@ const multiplyMatrices = (matrix1, matrix2) => {
         mul_matrix.push(rowData);
     }
 
-    console.log(mul_matrix);
     return mul_matrix;
 
 }
