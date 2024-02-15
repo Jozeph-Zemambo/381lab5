@@ -205,105 +205,80 @@ Description : DOM Elements.
 		</footer>
 		<script>
 			document.addEventListener('DOMContentLoaded', function afterRender() {
-				// Task 1: Set the text content of all elements with the class 'companyName' and remove their border
+				// Task 1
+                var companyName = document.getElementsByClassName('companyName');
+                for (let i = 0; i < companyName.length; i++) {
+                    companyName[i].textContent = 'Joseph Kimambo';
+                    companyName[i].style.border = 'none';
+                }
 
-				var compy = document.getElementsByClassName('companyName')
-				for(var i=0;i<compy.length;i++){
-					compy[i].textContent = 'Joseph Kimambo';
-					compy[i].style.border = 'none';
-				}
-					
+                // Task 2: Change the background color of the navigation bar
+                var nav = document.getElementsByTagName('nav');
+                for (let i = 0; i < nav.length; i++) {
+                    nav[i].style.backgroundColor = 'grey';
+                }
 
-				// Task 2: Change the background color of the navigation bar
-				document.querySelector('nav').style.backgroundColor = 'grey';
-
-
-				// Task 3: Hide the section titled 'What is full-stack?'
-				
-				const fullStackSection = document.querySelector('article'); // Assuming an h2 tag
-				fullStackSection.style.display = 'none';
-
-				// Task 4: Create a new <p> element and append it to the 'About Us' section
-				
-				
-				var abtus = document.createElement('p')
-				abtus.textContent = 'This is a new paragraph,';
-				abtus.style.color = 'red';
-				var aboutUs = document.getElementsByTagName('section');
-				aboutUs[0].appendChild(abtus);
+                // Task 3: Hide the section titled 'What is full-stack?'
+                var fullstack = document.getElementsByTagName('article');
+                fullstack[0].style.display = 'none';
 
 
+                // Task 4: Create a new <p> element and append it to the 'About Us' section
+                var abtus = document.createElement('p')
+                abtus.textContent = 'This is a new paragraph.';
+                abtus.style.color = 'green';
+                var aboutUs = document.getElementsByTagName('section');
+                aboutUs[0].appendChild(abtus);
 
+                // Task 5: Add placeholders to input elements based on their corresponding label IDs
+                var greyword1 = document.getElementById('name')
+                greyword1.placeholder = 'Name';
+                var greyword2 = document.getElementById('email')
+                greyword2.placeholder = 'Email';
+                var greyword3 = document.getElementById('message')
+                greyword3.placeholder = 'Message';
 
+                // Task 6: Set the src attribute of the image
+                var img = document.getElementsByTagName('img')
+                img[0].src = './images/example.svg';
 
-				// Task 5: Add placeholders to input elements based on their corresponding label IDs
+                // Task 7: Add a new item in the navigation menu
+                var Stanks = document.createElement('li');
+                var stanks = document.createElement('a');
+                stanks.textContent = 'Blog';
+                stanks.setAttribute('href', '#');
+                var nav = document.getElementsByTagName('ul');
+                Stanks.appendChild(stanks);
+                nav[0].appendChild(Stanks);
 
-				const inputElements = document.querySelectorAll('input');
-
-				inputElements.forEach(input => {
-				const label = document.querySelector(`label[for="${input.id}"]`);
-				if (label) {
-					input.placeholder = label.textContent;
-				}
-				});
-
-
-				// Task 6: Set the src attribute of the image
-				
-				var img = document.getElementsByTagName('img');
-				img[0].scr = './images/example.svg';
-					
-				
-				
-
-				// Task 7: Add a new item in the navigation menu
-				const navList = document.querySelector('nav ul'); 
-
-				const newItem = document.createElement('li');
-				const newLink = document.createElement('a'); 
-
-				newLink.textContent = 'Special thanks';
-				newLink.href = "HERE JUST FOR COLOR"; 
-
-				newItem.appendChild(newLink); 
-				navList.appendChild(newItem); 
-
-
-
-
-
-			
-
-				// Task 8: Change the submit button text upon clicking and make it disabled
-				var input = document.getElementsByTagName('input');
-                for (let i = 0; i < input.length; i++) {
-                    if (input[i].type == 'button'){
-                        input[i].addEventListener('click', function(){
-                            var inputList = document.getElementsByTagName('input');
-                            for (let i = 0; i < inputList.length; i++) {
-                                if (inputList[i].type == 'button'){
-                                    inputList[i].disabled = 'true';
-                                    inputList[i].value = 'Submitted';
+                // Task 8: Change the submit button text upon clicking and make it disabled
+                var btt = document.getElementsByTagName('input');
+                for (let i = 0; i < btt.length; i++) {
+                    if (btt[i].type == 'button'){
+                        btt[i].addEventListener('click', function(){
+                            var bttList = document.getElementsByTagName('input');
+                            for (let i = 0; i < bttList.length; i++) {
+                                if (bttList[i].type == 'button'){
+                                    bttList[i].disabled = 'true';
+                                    bttList[i].value = 'Submitted';
                                 }
                             }
                         });
                     }
                 }
-				// Task 9: Change the text color of each item in the 'Related Links' to green
-				const anc =document.getElementsByTagName('a');
-					for(let i = 0; i< anc.length;i++){
-						if (anc[i].innerText == 'W3School' || anc[i].innerText == 'AWS'){
-							anc[i].style.color = 'green'
-						}
-					}
 
-				// Task 10: Add a red solid border to the footer
-				const footer = document.querySelector('footer');
+                // Task 9: Change the text color of each item in the 'Related Links' to green
+                var rl = document.getElementsByTagName('a');
+                    for (let j = 0; j < rl.length; j++){
+                        if (rl[j].innerText == 'W3School' || rl[j].innerText == 'AWS'){
+                            rl[j].style.color = 'green';
+                    }
+                }
 
-				footer.style.borderColor = 'red';
-				footer.style.borderStyle = 'solid';
-				footer.style.borderWidth = '3px';
-			});
+                // Task 10: Add a red solid border to the footer
+                var footer = document.getElementsByTagName('footer');
+                footer[0].style.border = '3px solid red';
+            });
 		</script>
 	</body>
 </html>
